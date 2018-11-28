@@ -82,6 +82,12 @@ public class OficinaDAO implements Runnable{
 
                     oficina.setId_oficina(Integer.parseInt(so.getProperty("id_oficina").toString()));
                     oficina.setNome_oficina(so.getProperty("nome_oficina").toString());
+                    oficina.setBai_oficina(so.getProperty("bai_oficina").toString());
+                    oficina.setCep_oficina(so.getProperty("cep_oficina").toString());
+                    oficina.setCnpj_oficina(so.getProperty("cnpj_oficina").toString());
+                    oficina.setLgd_oficina(so.getProperty("lgd_oficina").toString());
+                    oficina.setNum_oficina(Integer.parseInt(so.getProperty("num_oficina").toString()));
+                    oficina.setTelefone_oficina(so.getProperty("telefone_oficina").toString());
                     oficina.setTipoOfcina(to);
 
                     this.lista.add(oficina);

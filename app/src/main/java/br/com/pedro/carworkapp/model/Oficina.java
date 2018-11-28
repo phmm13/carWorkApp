@@ -7,12 +7,12 @@
 package br.com.pedro.carworkapp.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 
 
 public class Oficina implements Serializable{
-    private int id_oficina;
+    private static final long serialVersionUID = 1L;
+    private Integer id_oficina;
     private String nome_oficina;
     private String telefone_oficina;
     private String cnpj_oficina;
@@ -22,14 +22,14 @@ public class Oficina implements Serializable{
     private String cep_oficina;
     private String lgd_oficina;
     private String bai_oficina;
-    private int num_oficina;
+    private Integer num_oficina;
     private TipoOficina tipoOfcina;
 
-    public int getId_oficina() {
+    public Integer getId_oficina() {
         return id_oficina;
     }
 
-    public void setId_oficina(int id_oficina) {
+    public void setId_oficina(Integer id_oficina) {
         this.id_oficina = id_oficina;
     }
 
@@ -105,11 +105,11 @@ public class Oficina implements Serializable{
         this.bai_oficina = bai_oficina;
     }
 
-    public int getNum_oficina() {
+    public Integer getNum_oficina() {
         return num_oficina;
     }
 
-    public void setNum_oficina(int num_oficina) {
+    public void setNum_oficina(Integer num_oficina) {
         this.num_oficina = num_oficina;
     }
     

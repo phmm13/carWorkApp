@@ -1,5 +1,6 @@
 package br.com.pedro.carworkapp.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -25,10 +26,19 @@ public class ListaOficinaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_oficina);
 
+        Intent intent = getIntent();
+        int idCarro =  intent.getExtras().getInt("idCarro");
+        int idTipoServico =   intent.getExtras().getInt("idTipoServico");
+        int idTipoOficina =   intent.getExtras().getInt("idTipoOficina");
+
         recyclerView = findViewById(R.id.recyclerOficina);
 
-        this.carregaLista();
+        this.carregaLista(idCarro,idTipoServico,idTipoOficina);
 
+
+        if(this.listaOficina == null){
+            this.listaOficina = new ArrayList<Oficina>();
+        }
         //configurar adapter, adapter recebe os dados, formata e joga no recycler view
         AdapterListaOficina adapter = new AdapterListaOficina(this.listaOficina);
 
@@ -64,9 +74,9 @@ public class ListaOficinaActivity extends AppCompatActivity {
          */
 
     }
-    public void carregaLista(){
+    public void carregaLista(int idCarro,int idTipoServico ,  int idTipoOficina){
         try {
-            this.listaOficina = new OficinaDAO().listar();
+            this.listaOficina = new OficinaDAO(idCarro,idTipoServico,idTipoOficina).listar();
         }catch(Exception e){
             e.printStackTrace();
         }

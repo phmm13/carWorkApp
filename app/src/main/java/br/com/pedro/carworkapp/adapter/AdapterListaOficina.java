@@ -30,10 +30,15 @@ public class AdapterListaOficina extends RecyclerView.Adapter<AdapterListaOficin
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        Oficina oficina = this.listaOficina.get( i );
+        if(this.listaOficina.size() == 0){
+            viewHolder.nomeOficina.setText("Nenhuma Oficina encontrada");
+        }else{
 
-        viewHolder.nomeOficina.setText(oficina.getNome_oficina());
-        viewHolder.tipoOficina.setText(oficina.getTipoOfcina().getDes_oficina());
+            Oficina oficina = this.listaOficina.get( i );
+
+            viewHolder.nomeOficina.setText(oficina.getNome_oficina());
+            viewHolder.tipoOficina.setText(oficina.getTipoOfcina().getDes_oficina());
+        }
     }
 
     @Override

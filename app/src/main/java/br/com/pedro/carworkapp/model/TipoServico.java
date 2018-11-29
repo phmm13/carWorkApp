@@ -6,11 +6,12 @@
 
 package br.com.pedro.carworkapp.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
 
-public class TipoServico {
+public class TipoServico implements Serializable {
     private int id_tipo_servico;
     private String des_tipo_servico;
 

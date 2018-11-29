@@ -6,11 +6,12 @@
 
 package br.com.pedro.carworkapp.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
 
-public class Marca {
+public class Marca implements Serializable {
     private int id_marca;
     private String nome_marca;
 

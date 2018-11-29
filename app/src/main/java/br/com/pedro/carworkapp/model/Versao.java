@@ -5,10 +5,11 @@
  */
 package br.com.pedro.carworkapp.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Versao {
+public class Versao implements Serializable {
 
     private int id_versao;
     private String nome_versao;

@@ -73,7 +73,7 @@ public class ListaOficinaActivity extends AppCompatActivity {
     }
     public void carregaLista(int idCarro,int idTipoServico ,  int idTipoOficina){
         try {
-            this.listaOficina = new OficinaDAO(idCarro,idTipoServico,idTipoOficina).listar();
+            this.listaOficina = new OficinaDAO(idCarro,idTipoServico,idTipoOficina).listar("oficina" , new Oficina());
         }catch(Exception e){
             e.printStackTrace();
         }
